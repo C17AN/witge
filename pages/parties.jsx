@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Breadcrumb from "../components/common/BreadCrumb";
+import Breadcrumb from "../components/common/Breadcrumb";
 import PartyList from "../components/pages/parties/PartyList";
 
 const parties = () => {
