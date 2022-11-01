@@ -1,7 +1,14 @@
 import styled from "@emotion/styled";
 import * as Icons from "react-icons/bs";
 
-const SmallButton = (props) => {
+type IconType = "BsFillChatFill" | "BsBookmarkStarFill" | "BsShareFill";
+
+interface Props {
+    icon: IconType;
+    value: string
+}
+
+const SmallButton = (props: Props) => {
     const Icon = Icons[props.icon];
     return (
         <Button><Icon/>{props.value}</Button>
