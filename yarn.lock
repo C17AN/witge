@@ -1361,6 +1361,13 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
+"@types/react-star-ratings@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@types/react-star-ratings/-/react-star-ratings-2.3.0.tgz#b9094da58c037faf7b9d85990b2a637dceae2f42"
+  integrity sha512-IVvUZTq02YFi0x2UZ2+pHDvxcQukoMeJO/H4a/CF16U2Vs0mJZWaPNvQaXvvAfqtqt2D4WsWQj/ml+Fq0KS/Hw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@^4.4.4":
   version "4.4.5"
   resolved "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.5.tgz#aae20dcf773c5aa275d5b9f7cdbca638abc5e416"
@@ -1642,7 +1649,7 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-classnames@^2.3.1:
+classnames@^2.2.1, classnames@^2.3.1:
   version "2.3.2"
   resolved "https://registry.npmjs.org/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
@@ -2832,7 +2839,7 @@ prop-types-extra@^1.1.0:
     react-is "^16.3.2"
     warning "^4.0.0"
 
-prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2887,10 +2894,14 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-rating-stars-component@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-rating-stars-component/-/react-rating-stars-component-2.2.0.tgz#e947c6a1f59278e6fea1098453f43cb15d077c14"
-  integrity sha512-A3lgLxumfFQQicKQmxacZ91fq/zRaVWlCPnVodJmJV6obvod4/yCotetN9WuyBiUfnKsEFDBo/8B85ocwmL7ng==
+react-star-ratings@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-star-ratings/-/react-star-ratings-2.3.0.tgz#311a68f8f44492439a5b306ed743e63a63fe0fa7"
+  integrity sha512-34Z/oFNDRRn4ZcX7F3t9ccnpo7SQ32gD/vsusQOBc6B6vlqaGR6tke1/Yx3jTDjemKRSmXqhKgpPTR7/JAXq6A==
+  dependencies:
+    classnames "^2.2.1"
+    prop-types "^15.6.0"
+    react "^16.1.0"
 
 react-transition-group@^4.4.2:
   version "4.4.5"
@@ -2908,6 +2919,15 @@ react@18.2.0:
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
   dependencies:
     loose-envify "^1.1.0"
+
+react@^16.1.0:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
+  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 regenerate-unicode-properties@^10.1.0:
   version "10.1.0"
