@@ -8,10 +8,10 @@ interface Props {
     value: string
 }
 
-const SmallButton = (props: Props) => {
-    const Icon = Icons[props.icon];
+const SmallButton = ({icon, value}: Props) => {
+    const Icon = Icons[icon];
     return (
-        <Button><Icon/>{props.value}</Button>
+        <Button><Icon/>{value}</Button>
     );
 }
 

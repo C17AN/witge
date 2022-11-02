@@ -4,10 +4,10 @@ interface Props {
     rating: number;
 }  
 
-const StarRating = (props: Props) => {
+const StarRating = ({rating}: Props) => {
     return (
         <StarRatings
-            rating={props.rating}
+            rating={rating}
             numberOfStars={5}
             starEmptyColor="#DADADA"
             starRatedColor="#1CE65F"
