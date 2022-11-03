@@ -4,10 +4,8 @@ import TextButton from "../components/common/TextButton";
 import ControlledTabs from "../components/pages/leaders/Tab";
 import StarRating from "../components/common/StarRating";
 import SmallButton from "../components/common/SmallButton";
-import { useState } from "react";
 
 const leaders = () => {
-  const [selectedTab, setSelectedTab] = useState();
   return (
     <div>
       <SearchField />
