@@ -13,7 +13,23 @@ const ControlledTabs = () => {
       activeKey={key}
       onSelect={(k) => setKey(k as string)}
       className="mb-3"
-      css={css``}
+      css={css`
+        justify-content: center;
+        .nav-link {
+          border-radius: 20px 20px 0 0 !important;
+          border: none;
+          font-size: 18px;
+          height: 60px;
+          width: 230px;
+          background-color: #C8CFD8;
+          color: #6C747F;
+          &.active{
+            color: #3E3ED4;
+            font-weight: 700;
+          }
+        }
+        border-bottom: none;
+      `}
     >
       <Tab eventKey="intro" title="자기소개 및 후기">
         <Introduction />
