@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Image from 'next/image';
 import { css } from "@emotion/react";
 import SmallButton from "../common/SmallButton"
+import styled from "@emotion/styled";
 
 function Navigation() {
   return (
@@ -34,13 +35,7 @@ function Navigation() {
             <Image src="/logo.svg" alt="witg logo" width={130} height={45}/>
           </Navbar.Brand>
         </Link>
-        <div
-          css={css`
-            display: flex;
-            justify-content: space-between !important;
-            flex: 2;
-          `}
-        >
+        <LinkWrapper>
           <Link href="/parties" passHref>
             <Nav.Link>파티 참여</Nav.Link>
           </Link>
@@ -57,10 +52,16 @@ function Navigation() {
             <Nav.Link>리더 지원</Nav.Link>
           </Link>
           <SmallButton icon="BsLock" value="LOGIN" theme="none"/>
-        </div>
+        </LinkWrapper>
       </Nav>
     </Navbar>
   );
 }
+
+const LinkWrapper = styled.div`
+  display: flex;
+  justify-content: space-between !important;
+  flex: 2;
+`
 
 export default Navigation;

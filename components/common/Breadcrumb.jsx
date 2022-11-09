@@ -1,28 +1,74 @@
 import Link from "next/link";
 import { Breadcrumb as BootStrapBreadcrumb } from "react-bootstrap";
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
-const Breadcrumb = ({ currentPageTitle, currentPagePath }) => {
+const Breadcrumb = ({ currentPageTitle, currentPagePath, pageDescription }) => {
   return (
-    <BootStrapBreadcrumb>
-      <Link href="/" passHref>
-        <BootStrapBreadcrumb.Item>홈</BootStrapBreadcrumb.Item>
-      </Link>
-      <Link href={currentPagePath} passHref>
-        <BootStrapBreadcrumb.Item>{currentPageTitle}</BootStrapBreadcrumb.Item>
-      </Link>
-      <p>
-        파티 참여를 위한 페이지로, 자신이 원하는 리더에게 빈 슬롯이 있다면
-        비용을 지불하고 슬롯에 참여할 수 있습니다.
+    <Container
+      css={css`
+        .breadcrumb {
+          flex: 1;
+          margin-bottom: 0;
+          justify-content: space-around;
+
+          p {
+            margin-bottom: 0;
+          }
+        }
+      `}
+    >
+      <div
+        css={css`
+          display: flex;
+        `}
+      >
+        <Link href="/" passHref>
+          <BootStrapBreadcrumb.Item
+            css={css`
+              a {
+                color: rgb(175, 175, 175) !important;
+                font-weight: 700;
+                text-decoration: none;
+              }
+            `}
+          >
+            홈
+          </BootStrapBreadcrumb.Item>
+        </Link>
+        <Link href={currentPagePath} passHref>
+          <BootStrapBreadcrumb.Item
+            css={css`
+              a {
+                color: rgb(47, 34, 202) !important;
+                font-weight: 700;
+                text-decoration: none;
+              }
+            `}
+          >
+            {currentPageTitle}
+          </BootStrapBreadcrumb.Item>
+        </Link>
+      </div>
+      <p
+        css={css`
+          color: rgb(144, 144, 144) !important;
+          font-weight: 300;
+          text-decoration: none;
+        `}
+      >
+        {pageDescription}
       </p>
-    </BootStrapBreadcrumb>
+    </Container>
   );
 };
 
-const Container = styled.div`
+const Container = styled(BootStrapBreadcrumb)`
   display: flex;
-  height: 96px;
+  width: 100%;
+  height: 48px;
   align-items: center;
+  font-size: 14px;
   justify-content: space-between;
 `;
 
