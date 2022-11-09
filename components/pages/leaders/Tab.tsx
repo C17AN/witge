@@ -13,6 +13,7 @@ const ControlledTabs = () => {
       activeKey={key}
       onSelect={(k) => setKey(k as string)}
       className="mb-3"
+      css={css``}
     >
       <Tab eventKey="intro" title="자기소개 및 후기">
         <Introduction />
