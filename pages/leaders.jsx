@@ -6,6 +6,8 @@ import StarRating from "../components/common/StarRating";
 import SmallButton from "../components/common/SmallButton";
 import RecommendedLeader from "components/pages/leaders/RecommendedLeader";
 import Breadcrumb from "components/common/Breadcrumb";
+import LeaderList from "components/pages/leaders/RecommendedLeader/LeaderList";
+import { css } from "@emotion/react";
 
 const leaders = () => {
   return (
@@ -17,12 +19,39 @@ const leaders = () => {
         pageDescription="리더에 대한 정보와 후기를 확인할 수 있으며, 채팅을 통한 자세한 문의도 가능합니다."
       />
       <RecommendedLeader />
-      <ControlledTabs />
-      <StarRating rating={4.5} />
-      <TextButton />
-      <SmallButton icon="BsFillChatFill" value="문의하기" theme="gradation"/>
-      <SmallButton icon="BsBookmarkStarFill" value="스크랩하기" theme="light"/>
-      <SmallButton icon="BsShareFill" value="공유하기" theme="light"/>
+      <div
+        css={css`
+          text-align: center;
+          font-size: 20px;
+          font-weight: 300;
+          margin-top: 40px;
+        `}
+      >
+        지금 바로 맞춤 코칭이 가능한 리더
+      </div>
+      <LeaderList />
+      <div
+        css={css`
+          text-align: center;
+          font-size: 20px;
+          font-weight: 300;
+          margin-top: 40px;
+        `}
+      >
+        파티 또는 강의중인 리더
+      </div>
+      <LeaderList />
+      <div
+        css={css`
+          text-align: center;
+          font-size: 20px;
+          font-weight: 300;
+          margin-top: 40px;
+        `}
+      >
+        예약 가능한 리더
+      </div>
+      <LeaderList />
     </div>
   );
 };

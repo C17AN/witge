@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
+import LeaderList from "./LeaderList";
 
 type Props = {};
 
@@ -27,6 +28,7 @@ const RecommendedLeader = (props: Props) => {
           <p
             css={css`
               margin-bottom: 0;
+              font-size: 15px;
               color: rgb(174, 175, 178);
             `}
           >
@@ -34,22 +36,24 @@ const RecommendedLeader = (props: Props) => {
           </p>
         </div>
       </Content>
+      <LeaderList />
     </Container>
   );
 };
 
 const Container = styled.div`
   width: 100%;
-  height: 400px;
+  min-height: 400px;
   background-color: rgb(234, 239, 246);
   padding: 48px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
 const Content = styled.div`
-  max-width: 600px;
+  width: 100%;
 `;
 
 export default RecommendedLeader;

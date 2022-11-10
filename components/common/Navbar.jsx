@@ -2,17 +2,19 @@ import Link from "next/link";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Image from 'next/image';
+import Image from "next/image";
 import { css } from "@emotion/react";
-import SmallButton from "../common/SmallButton"
+import SmallButton from "../common/SmallButton";
 import styled from "@emotion/styled";
 
 function Navigation() {
   return (
-    <Navbar bg="dark" variant="dark"
+    <Navbar
+      bg="dark"
+      variant="dark"
       css={css`
-          background-color: #030318 !important;
-          font-size: 18px !important;
+        background-color: #030318 !important;
+        font-size: 18px !important;
       `}
     >
       <Nav
@@ -20,19 +22,21 @@ function Navigation() {
           justify-content: space-between !important;
           width: 100%;
           padding: 0 15vw;
-          a, button {
+          a,
+          button {
             margin: auto 0;
           }
         `}
       >
         <Link href="/" passHref>
-          <Navbar.Brand href="#home"
+          <Navbar.Brand
+            href="#home"
             css={css`
               margin: 0 !important;
               flex: 1;
             `}
           >
-            <Image src="/logo.svg" alt="witg logo" width={130} height={45}/>
+            <Image src="/logo.svg" alt="witg logo" width={130} height={45} />
           </Navbar.Brand>
         </Link>
         <LinkWrapper>
@@ -51,7 +55,7 @@ function Navigation() {
           <Link href="/apply" passHref>
             <Nav.Link>리더 지원</Nav.Link>
           </Link>
-          <SmallButton icon="BsLock" value="LOGIN" theme="none"/>
+          <SmallButton icon="BsLock" value="LOGIN" theme="none" />
         </LinkWrapper>
       </Nav>
     </Navbar>
@@ -62,6 +66,6 @@ const LinkWrapper = styled.div`
   display: flex;
   justify-content: space-between !important;
   flex: 2;
-`
+`;
 
 export default Navigation;
