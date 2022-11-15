@@ -68,6 +68,7 @@ const Container = styled.div`
 const PlayerImage = styled.img`
   width: 100%;
   border-radius: 50%;
+  margin-bottom: 12px;
 `;
 
 const StarScore = styled.div`
