@@ -6,6 +6,7 @@ import Breadcrumb from "../../common/Breadcrumb";
 import { DEMO_LEADER_LIST } from "../leaders/RecommendedLeader/LeaderList";
 import ControlledTabs from "../leaders/Tab";
 import LeaderProfile from "./LeaderProfile";
+import SearchField from "../leaders/SearchField";
 
 type Props = {};
 
@@ -15,6 +16,7 @@ const LeaderDetail = (props: Props) => {
 
   return (
     <div>
+      <SearchField />
       <Breadcrumb
         currentPagePath="/"
         currentPageTitle="리더 찾기"
@@ -22,11 +24,6 @@ const LeaderDetail = (props: Props) => {
       />
       <LeaderProfile {...leaderInfo} />
       <ControlledTabs />
-      <StarRating rating={4.5} />
-      <Textbutton />
-      <SmallButton icon="BsFillChatFill" value="문의하기" theme="gradation" />
-      <SmallButton icon="BsBookmarkStarFill" value="스크랩하기" theme="light" />
-      <SmallButton icon="BsShareFill" value="공유하기" theme="light" />
     </div>
   );
 };

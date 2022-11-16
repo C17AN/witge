@@ -31,6 +31,13 @@ export const DEMO_LEADER_LIST: Leader[] = [
       "http://file.mk.co.kr/meet/neds/2022/04/image_readtop_2022_330983_16498273855008255.jpg",
     reviewCount: 54,
     status: "파티중",
+    partyMember: 19,
+    student: 20,
+    summary: {
+      country: "KOREA",
+      kd: 1.05,
+      win: 4954,
+    },
   },
   {
     id: 1,
@@ -42,6 +49,13 @@ export const DEMO_LEADER_LIST: Leader[] = [
       "http://file.mk.co.kr/meet/neds/2022/04/image_readtop_2022_330983_16498273855008255.jpg",
     reviewCount: 54,
     status: "파티중",
+    partyMember: 19,
+    student: 20,
+    summary: {
+      country: "KOREA",
+      kd: 1.05,
+      win: 4954,
+    },
   },
   {
     id: 2,
@@ -53,6 +67,13 @@ export const DEMO_LEADER_LIST: Leader[] = [
       "http://file.mk.co.kr/meet/neds/2022/04/image_readtop_2022_330983_16498273855008255.jpg",
     reviewCount: 54,
     status: "파티중",
+    partyMember: 19,
+    student: 20,
+    summary: {
+      country: "KOREA",
+      kd: 1.05,
+      win: 4954,
+    },
   },
   {
     id: 3,
@@ -64,6 +85,13 @@ export const DEMO_LEADER_LIST: Leader[] = [
       "http://file.mk.co.kr/meet/neds/2022/04/image_readtop_2022_330983_16498273855008255.jpg",
     reviewCount: 54,
     status: "파티중",
+    partyMember: 19,
+    student: 20,
+    summary: {
+      country: "KOREA",
+      kd: 1.05,
+      win: 4954,
+    },
   },
 ];
 

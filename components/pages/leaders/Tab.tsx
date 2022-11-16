@@ -16,17 +16,22 @@ const ControlledTabs = () => {
       css={css`
         justify-content: center;
         background-color: rgb(234, 239, 246);
+        .nav-item {
+          margin-top: auto;
+        }
         .nav-link {
           border-radius: 20px 20px 0 0 !important;
           border: none;
           font-size: 18px;
-          height: 60px;
+          height: 50px;
           width: 230px;
           background-color: #c8cfd8;
           color: #6c747f;
+          margin: 0 5px;
           &.active {
             color: #3e3ed4;
             font-weight: 700;
+            height: 60px;
           }
         }
         border-bottom: none;

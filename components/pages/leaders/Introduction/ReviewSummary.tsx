@@ -99,6 +99,7 @@ const Container = styled.div`
   height: 180px;
   background-color: rgb(246, 247, 250);
   padding: 32px 24px;
+  border-radius: 10px;
 `;
 
 export default ReviewSummary;
