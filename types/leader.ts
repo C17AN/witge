@@ -7,4 +7,11 @@ export type Leader = {
   nickname: string;
   score: number;
   reviewCount: number;
+  partyMember: number;
+  student: number;
+  summary: {
+    country: string;
+    kd: number;
+    win: number;
+  };
 };

@@ -4,6 +4,9 @@ import React from "react";
 import { Leader } from "../../../types/leader";
 import StarRating from "../../common/StarRating";
 import Textbutton from "../../common/TextButton";
+import Link from "next/link";
+import { FaRegHandPointer } from "react-icons/fa";
+import SmallButton from "../../common/SmallButton";
 
 type Props = {};
 
@@ -16,6 +19,9 @@ const LeaderProfile = ({
   imageUrl,
   score,
   status,
+  partyMember,
+  student,
+  summary,
 }: Leader) => {
   return (
     <Container>
@@ -29,16 +35,18 @@ const LeaderProfile = ({
           css={css`
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
+            margin-right: 200px;
           `}
         >
           <p
             css={css`
               font-size: 20px;
               font-weight: 700;
-              color: rgb(128, 125, 218);
+              color: #3e3ed4;
             `}
           >
-            LV. {level}
+            Lv. {level}
           </p>
           <p
             css={css`
@@ -52,6 +60,7 @@ const LeaderProfile = ({
             css={css`
               text-align: left;
               font-size: 15px;
+              color: #3a3ac7;
             `}
           >
             {nickname}
@@ -60,40 +69,135 @@ const LeaderProfile = ({
             css={css`
               display: flex;
               align-items: center;
+              justify-content: space-between;
             `}
           >
-            <span
-              css={css`
-                margin-right: 4px;
-              `}
-            >
-              평점 평균 :
-            </span>
-            <div
-              css={css`
-                display: flex;
-                align-items: center;
-              `}
-            >
-              <div
-                css={css`
-                  margin-bottom: 4px;
-                `}
-              >
-                <StarRating rating={score} />
-              </div>
+            <>
               <span
                 css={css`
-                  color: #1ce65f;
-                  margin: 0;
-                  font-weight: 600;
-                  margin-left: 4px;
+                  margin-right: 4px;
                 `}
               >
-                {score}
+                평점 평균 :
               </span>
-            </div>
+              <div
+                css={css`
+                  display: flex;
+                  align-items: center;
+                  margin-right: 50px;
+                `}
+              >
+                <div
+                  css={css`
+                    margin-bottom: 4px;
+                  `}
+                >
+                  <StarRating rating={score} />
+                </div>
+                <span
+                  css={css`
+                    color: #1ce65f;
+                    margin: 0;
+                    font-weight: 600;
+                    margin-left: 4px;
+                  `}
+                >
+                  {score}
+                </span>
+              </div>
+            </>
+            <>
+              <span
+                css={css`
+                  margin-right: 4px;
+                `}
+              >
+                누적 파티원 : {partyMember} 명
+              </span>
+            </>
           </div>
+          <div
+            css={css`
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            `}
+          >
+            <>
+              <span
+                css={css`
+                  margin-right: 4px;
+                `}
+              >
+                누적후기 :
+              </span>
+              <div
+                css={css`
+                  color: #3e3ed4;
+                  margin-right: 50px;
+                `}
+              >
+                {reviewCount}
+                <Link href="/review">
+                  <a
+                    css={css`
+                      all: unset;
+                      cursor: pointer;
+                    `}
+                  >
+                    (후기바로가기
+                    <FaRegHandPointer
+                      css={css`
+                        transform: rotate(90deg);
+                      `}
+                    />
+                    )
+                  </a>
+                </Link>
+              </div>
+            </>
+            <>
+              <span
+                css={css`
+                  margin-right: 4px;
+                `}
+              >
+                누적 수강생 : {student} 명
+              </span>
+            </>
+          </div>
+          <div
+            css={css`
+              margin-top: 10px;
+            `}
+          >
+            {Object.entries(summary).map(([title, text], i) => (
+              <Textbutton
+                key={i}
+                title={title === "country" ? "" : `${title}: `}
+                text={text}
+              />
+            ))}
+          </div>
+        </div>
+        <div
+          css={css`
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          `}
+        >
+          <SmallButton
+            icon="BsFillChatFill"
+            value="문의하기"
+            theme="gradation"
+          />
+          <SmallButton
+            icon="BsBookmarkStarFill"
+            value="스크랩하기"
+            theme="light"
+          />
+          <SmallButton icon="BsShareFill" value="공유하기" theme="light" />
         </div>
       </div>
     </Container>

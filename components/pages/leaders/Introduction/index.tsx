@@ -45,12 +45,15 @@ const Title = styled.h2`
 `;
 
 const Container = styled.div`
-  height: 100vh;
   max-width: 1024px;
   margin: 0 auto;
+  color: #333333;
+  padding: 5vh 3vw;
 `;
 
-const Description = styled.div``;
+const Description = styled.div`
+  line-height: 2;
+`;
 
 const ContentWrapper = styled.div`
   margin-bottom: 32px;
