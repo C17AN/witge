@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import StarRating from "../../../common/StarRating";
+import RatingChart from "./RatingChart";
 
 type Props = {};
 
@@ -88,7 +89,22 @@ const ReviewSummary = (props: Props) => {
             </p>
           </div>
         </div>
-        <div>평점 비율</div>
+        <div
+          css={css`
+            display: flex;
+            align-items: center;
+          `}
+        >
+          <div
+            css={css`
+              font-size: 15px;
+              margin-right: 24px;
+            `}
+          >
+            평점 비율
+          </div>
+          <RatingChart ratingCount={[65, 59, 80, 81, 56]}></RatingChart>
+        </div>
       </div>
     </Container>
   );

@@ -48,10 +48,18 @@ const SmallButton = ({ icon, value, theme }: Props) => {
         ${buttonTheme[theme]}
       `}
     >
+      <svg width="0" height="0">
+        <linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
+          <stop stopColor="#2AF498" offset="-9.99%" />
+          <stop stopColor="#00CCFF" offset="35.15%" />
+          <stop stopColor="#0078FF" offset="83.21%" />
+        </linearGradient>
+      </svg>
       <Icon
         css={css`
           margin-right: 10px;
         `}
+        style={theme === "light" ? { fill: "url(#blue-gradient)" } : undefined}
       />
       {value}
     </Button>
