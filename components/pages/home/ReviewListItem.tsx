@@ -3,34 +3,40 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import StarRating from "../../common/StarRating";
 
-type Props = {
-  nickname: string;
-  leader: string;
-  rating: number;
-  title: string;
-  description: string;
-};
-
-const ReviewListItem = ({ nickname, leader, rating, title, description }: Props) => {
+const ReviewListItem = ({
+  leaderName,
+  userName,
+  ratio,
+  title,
+  content,
+}: ReviewListResopnseData) => {
   return (
     <Container>
-      <div  
+      <div
         css={css`
           font-size: 18px;
-          border-bottom: 1px solid #A0A0A0;
+          border-bottom: 1px solid #a0a0a0;
         `}
       >
-        <span>{nickname} 님</span><span css={css` font-weight: 100;`}> ({leader} 리더님)</span>
+        <span>{userName} 님</span>
+        <span
+          css={css`
+            font-weight: 100;
+          `}
+        >
+          {" "}
+          ({leaderName} 리더님)
+        </span>
       </div>
-      <StarRating rating={rating} />
+      <StarRating rating={ratio} />
       <span
         css={css`
           font-size: 22px;
           font-weight: 600;
-          color: #244B94;
+          color: #244b94;
         `}
       >
-       {title}
+        {title}
       </span>
       <span
         css={css`
@@ -39,7 +45,7 @@ const ReviewListItem = ({ nickname, leader, rating, title, description }: Props)
           color: #333333;
         `}
       >
-       {description}
+        {content}
       </span>
     </Container>
   );
@@ -52,7 +58,7 @@ const Container = styled.div`
   border-bottom-right-radius: 20px;
   display: flex;
   flex-direction: column;
-  margin: 0 20px
+  margin: 0 20px;
 `;
 
 export default ReviewListItem;

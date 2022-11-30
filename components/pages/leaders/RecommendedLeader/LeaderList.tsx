@@ -1,14 +1,33 @@
 import styled from "@emotion/styled";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import axiosInstance from "../../../../axios";
 import { Leader } from "../../../../types/leader";
 import LeaderListItem from "./LeaderListItem";
 
 type Props = {};
 
 const LeaderList = (props: Props) => {
+  const [leaderList, setLeaderList] = useState<
+    RecommendedLeaderResopnseData[] | null
+  >(null);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axiosInstance.get(`/api/leader/best_leader`);
+        setLeaderList(data);
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          alert(error.response?.data.message);
+        }
+      }
+    })();
+  }, []);
+
   return (
     <Container>
-      {DEMO_LEADER_LIST.map((leader) => (
+      {leaderList?.map((leader) => (
         <LeaderListItem {...leader} key={leader.id} />
       ))}
     </Container>

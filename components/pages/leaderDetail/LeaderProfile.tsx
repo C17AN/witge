@@ -12,17 +12,26 @@ type Props = {};
 
 const LeaderProfile = ({
   id,
-  name,
+  userName,
+  realName,
+  phone,
+  email,
+  birthDate,
+  gender,
   nickname,
-  reviewCount,
-  level,
-  imageUrl,
-  score,
+  brand,
+  branch,
+  room,
+  seatNumber,
+  profileImgUrl,
+  location,
   status,
-  partyMember,
-  student,
-  summary,
-}: Leader) => {
+  lastLoginAt,
+  school,
+  rank,
+  groupList,
+  darkMode,
+}: LeaderResopnseData) => {
   return (
     <Container>
       <div
@@ -30,7 +39,12 @@ const LeaderProfile = ({
           display: flex;
         `}
       >
-        <ProfileImage src={imageUrl} alt={name} />
+        <ProfileImage
+          src={
+            "http://file.mk.co.kr/meet/neds/2022/04/image_readtop_2022_330983_16498273855008255.jpg"
+          }
+          alt={realName}
+        />
         <div
           css={css`
             display: flex;
@@ -46,7 +60,7 @@ const LeaderProfile = ({
               color: #3e3ed4;
             `}
           >
-            Lv. {level}
+            Lv. {4}
           </p>
           <p
             css={css`
@@ -54,7 +68,7 @@ const LeaderProfile = ({
               font-weight: 700;
             `}
           >
-            {name}
+            {realName}
           </p>
           <p
             css={css`
@@ -92,7 +106,7 @@ const LeaderProfile = ({
                     margin-bottom: 4px;
                   `}
                 >
-                  <StarRating rating={score} />
+                  <StarRating rating={4.5} />
                 </div>
                 <span
                   css={css`
@@ -102,7 +116,7 @@ const LeaderProfile = ({
                     margin-left: 4px;
                   `}
                 >
-                  {score}
+                  {4.5}
                 </span>
               </div>
             </>
@@ -112,7 +126,7 @@ const LeaderProfile = ({
                   margin-right: 4px;
                 `}
               >
-                누적 파티원 : {partyMember} 명
+                누적 파티원 : {12} 명
               </span>
             </>
           </div>
@@ -137,7 +151,7 @@ const LeaderProfile = ({
                   margin-right: 50px;
                 `}
               >
-                {reviewCount}
+                {13}
                 <Link href="/review">
                   <a
                     css={css`
@@ -162,11 +176,11 @@ const LeaderProfile = ({
                   margin-right: 4px;
                 `}
               >
-                누적 수강생 : {student} 명
+                누적 수강생 : {324} 명
               </span>
             </>
           </div>
-          <div
+          {/* <div
             css={css`
               margin-top: 10px;
             `}
@@ -178,7 +192,7 @@ const LeaderProfile = ({
                 text={text}
               />
             ))}
-          </div>
+          </div> */}
         </div>
         <div
           css={css`
