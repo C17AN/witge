@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReviewListItem from "./ReviewListItem";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
+import axiosInstance from "../../../axios";
+import axios from "axios";
 
 type Props = {};
 
 const ReviewList = (props: Props) => {
+  const [reviewList, setReviewList] = useState<ReviewListResopnseData[] | null>(
+    null
+  );
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axiosInstance.get(`/api/review/main-page`);
+        setReviewList(data);
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          alert(error.response?.data.message);
+        }
+      }
+    })();
+  }, []);
+
   return (
     <Container>
-      {DEMO_DATA_LIST.map((review) => {
-        return <ReviewListItem key={review.id} {...review} />;
+      {reviewList?.map((review, idx) => {
+        return <ReviewListItem key={idx} {...review} />;
       })}
     </Container>
   );

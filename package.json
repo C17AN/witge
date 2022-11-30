@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@types/react-star-ratings": "^2.3.0",
+    "axios": "^1.2.0",
     "bootstrap": "^5.2.2",
     "chart.js": "^4.0.1",
     "next": "12.3.1",

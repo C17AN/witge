@@ -2,6 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  async rewrites() {
+    return [
+      {
+        source: "/api/:slug*",
+        destination: `http://211.254.212.182:9090/api/v1/:slug*`,
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

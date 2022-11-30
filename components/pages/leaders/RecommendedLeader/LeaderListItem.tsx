@@ -9,23 +9,29 @@ type Props = {};
 
 const LeaderListItem = ({
   id,
-  level,
-  name,
-  nickname,
-  score,
-  status,
-  imageUrl,
-}: Leader) => {
+  userName,
+  realName,
+  reviewRatio,
+  reviewCnt,
+  usuallyActiveDay,
+  usuallyActiveStartTime,
+  usuallyActiveEndTime,
+}: RecommendedLeaderResopnseData) => {
   return (
     <Link href={`/leader/${id}`}>
       <Container>
-        <PlayerImage src={imageUrl} alt={name} />
+        <PlayerImage
+          src={
+            "http://file.mk.co.kr/meet/neds/2022/04/image_readtop_2022_330983_16498273855008255.jpg"
+          }
+          alt={realName}
+        />
         <div
           css={css`
             font-weight: 700;
           `}
         >
-          {name}
+          {realName}
         </div>
         <div
           css={css`
@@ -33,11 +39,11 @@ const LeaderListItem = ({
             color: rgb(128, 125, 218);
           `}
         >
-          {nickname}
+          {userName}
         </div>
         <StarScore>
-          <StarRating rating={score} />
-          <p>{score}</p>
+          <StarRating rating={4.5} />
+          <p>{4.5}</p>
         </StarScore>
       </Container>
     </Link>
